@@ -442,7 +442,7 @@ static void computeDisparitySGBM( const Mat& img1, const Mat& img2,
                         if( y > 0 )
                         {
                             const CostType* hsumSub = hsumBuf + (std::max(y - SH2 - 1, 0) % hsumBufNRows)*costBufSize;
-                            const CostType* Cprev = !fullDP || y == 0 ? C : C - costBufSize;
+                            const CostType* Cprev = !fullDP ? C : C - costBufSize;
 
                             for( x = D; x < width1*D; x += D )
                             {
